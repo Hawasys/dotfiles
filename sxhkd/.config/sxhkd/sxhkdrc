@@ -1,0 +1,102 @@
+# ##############################################################################
+# #                                   KEYBINDS                                 #
+# ##############################################################################
+
+# NOTE: This is directly ported from my i3wim config.
+
+# Focus next/prev window
+super + {alt,shift} + f
+    bspc node -f {next,prev}.local.!hidden.window
+
+# Fullscreen window with gaps
+alt + f
+    sh $HOME/.local/bin/tglbar
+
+# Move the focused window
+super + {Left,Down,Up,Right}
+	bspc node -v {-20 0,0 20,0 -20,20 0}
+
+# Kill the focused window
+super + q
+    bspc node -c
+
+# Move to or send window to workspace #
+super + {_,shift + }{1-8}
+	bspc {desktop -f,node -d} '^{1-8}'
+
+# Move windows
+super + {h,j,k,l}
+	bspc node -f {west,south,north,east}
+
+# Resize windows
+super + shift + {h,j,k,l}
+	bspc node -z {right -20 0,top 0 20,bottom 0 -20,left 20 0}
+
+super + alt + {h,j,k,l}
+	bspc node -z {left -20 0,bottom 0 20,top 0 -20,right 20 0}
+
+# Set window state
+super + {alt + t,shift + t,space,alt + f}
+	bspc node -t {tiled,pseudo_tiled,floating,fullscreen}
+
+# Add focused window to a tabbed instance
+super + t; {h,j,k,l}
+    tabc $(bspc query -N -n {west,south,north,east}) add $(bspc query -N -n focused)
+# Remove the focused window from a tabbed instance
+super + t; r
+    tabbed=$(bspc query -N -n focused); \
+    child=$(tabc list $tabbed | head -n1); \
+    tabc $tabbed remove $child
+
+# Set new window orientation
+super + ctrl + {h,j,k,l}
+	bspc node -p {west,south,north,east}
+
+# Cancel the new window orientation
+super + ctrl + space
+	bspc node -p cancel
+
+# Lock screen
+super + l
+    betterlockscreen -l blur
+
+# Start alacritty
+super + Return
+    alacritty 
+
+# Open Vivaldi
+super + b
+    firefox
+
+# Open application menu
+super + d
+    sh $HOME/.local/bin/appmnu
+
+# Toggle eww dashboard
+super + p
+    sh $HOME/.local/bin/dshbrd
+
+# Screenshot
+Print
+    scrot -e 'mv $f ~/Images/screenshots/'
+
+super + Print
+    scrot -s -e 'mv $f ~/Images/screenshots/'
+
+# Manage volume
+XF86Audio{Raise,Lower}Volume
+    pulseaudio-ctl {up,down}
+
+XF86Audio{Next,Prev,Play,Stop}
+    pulseaudio-ctl {next,prev,play,stop}
+
+XF86AudioMute
+    pulseaudio-ctl mute
+
+# Manage brightness
+XF86MonBrightness{Up,Down}
+    xbacklight -{inc,dec} 10
+
+# Quit and restart bspwm
+super + alt + {Escape, shift + r}
+   bspc {quit,wm -r}
