@@ -4,7 +4,7 @@ super + alt + {n, m}
 
 # Fullscreen window with gaps
 alt + f
-    sh $HOME/.local/bin/tglbar
+    sh $HOME/.local/scripts/tglbar
 
 # Move the focused window
 super + {Left,Down,Up,Right}
@@ -52,11 +52,11 @@ super + b
 
 # Open application menu
 super + d
-    sh $HOME/.local/bin/appmnu
+    sh $HOME/.local/scripts/appmnu
 
 # Toggle eww dashboard
 super + p
-    sh $HOME/.local/bin/dshbrd
+    sh $HOME/.local/scripts/dshbrd
 
 # Screenshot
 Print

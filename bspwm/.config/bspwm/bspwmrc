@@ -25,7 +25,7 @@ config() { bspc config "$@" & }
 xrdb $HOME/.Xresources &
 killall "dusnt"
 dunst &
-$HOME/.local/bin/eww daemon &
+$HOME/.local/scripts/eww daemon &
 mpd &
 # $HOME/.local/bin/mpd-discord-rpc &
 picom &
