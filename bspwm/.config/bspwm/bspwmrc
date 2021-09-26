@@ -7,6 +7,7 @@
 # export BROWSER=vivaldi-stable
 
 pgrep -x sxhkd > /dev/null || sxhkd &
+pgrep bspswallow > /dev/null || $HOME/.config/bspwm/bspswallow &
 
 # ##############################################################################
 # #                                  FUNCTIONS                                 # 
@@ -21,9 +22,11 @@ config() { bspc config "$@" & }
 # ##############################################################################
 
 # Autostart Apps
+xrdb $HOME/.Xresources &
+killall "dusnt"
 dunst &
 $HOME/.local/bin/eww daemon &
-mpd
+mpd &
 # $HOME/.local/bin/mpd-discord-rpc &
 picom &
 
@@ -36,31 +39,32 @@ hsetroot -fill "$HOME/.wallpaper.png"
 # Start polybar
 sh $HOME/.config/polybar/launch.sh
 setxkbmap br abnt2
-# I hate mouse drift.
-# xset mouse 2.5 0
 
 # ##############################################################################
 # #                                 WINDOW RULES                               #
 # ##############################################################################
 
-
 # ##############################################################################
 # #                            GENERAL CONFIGURATION                           #
 # ##############################################################################
 
-bspc monitor -d I II III IV V
+bspc monitor -d I II III IV 
 
-config pointer_modifier             Mod4
+bspc config pointer_modifier             Mod4
+bspc config pointer_action1              move
+bspc config pointer_action2              resize_side
+bspc config pointer_action3              resize_corner
 
-config border_width                 3
-config window_gap                   10
+bspc config border_width                 3
+bspc config window_gap                   10
 
-config top_padding                  30
-config bottom_padding               0
+bspc config top_padding                  30
+bspc config bottom_padding               0
 
-config split_ratio                  0.62
-config borderless_monocle           true
-config gapless_monocle              true
+bspc config split_ratio                  0.55
+bspc config borderless_monocle           true
+bspc config gapless_monocle              true
+bspc config single_monocle               true
 
 # Yes, this is stolen from gk.
 outer   =  '0x1d2021'   # outer
