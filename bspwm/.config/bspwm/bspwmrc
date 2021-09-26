@@ -43,9 +43,6 @@ setxkbmap br abnt2
 # #                                 WINDOW RULES                               #
 # ##############################################################################
 
-rule firefox                        desktop=^1
-rule discord                        desktop=^2
-rule Code                           desktop=^3
 
 # ##############################################################################
 # #                            GENERAL CONFIGURATION                           #
