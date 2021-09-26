@@ -1,8 +1,3 @@
-# ##############################################################################
-# #                                   KEYBINDS                                 #
-# ##############################################################################
-
-
 # Focus next/prev window
 super + alt + {n, m}
     bspc node -f {next,prev}.local.!hidden.window
@@ -38,15 +33,6 @@ super + alt + {h,j,k,l}
 super + {alt + t,shift + t,space,alt+ f}
 	bspc node -t {tiled,pseudo_tiled,floating,fullscreen}
 
-# Add focused window to a tabbed instance
-super + t; {h,j,k,l}
-    tabc $(bspc query -N -n {west,south,north,east}) add $(bspc query -N -n focused)
-# Remove the focused window from a tabbed instance
-super + t; r
-    tabbed=$(bspc query -N -n focused); \
-    child=$(tabc list $tabbed | head -n1); \
-    tabc $tabbed remove $child
-
 # Set new window orientation
 super + ctrl + {h,j,k,l}
 	bspc node -p {west,south,north,east}
@@ -55,15 +41,12 @@ super + ctrl + {h,j,k,l}
 super + ctrl + space
 	bspc node -p cancel
 
-# Lock screen
-super + l
-    betterlockscreen -l blur
 
 # Start alacritty
 super + Return
     alacritty 
 
-# Open Vivaldi
+# Open Firefox
 super + b
     firefox
 
@@ -97,5 +80,13 @@ XF86MonBrightness{Up,Down}
     xbacklight -{inc,dec} 10
 
 # Quit and restart bspwm
-super + alt + {Escape, shift + r}
+super + z;{e, r}
    bspc {quit,wm -r}
+
+# Shutdown and reboot
+super + z;{s, shift + r}
+    systemctl {shutdown,reboot}
+
+# Lock screen
+super + z;l
+    betterlockscreen -l
