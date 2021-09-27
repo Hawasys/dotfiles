@@ -85,7 +85,7 @@ super + z;{e, r}
 
 # Shutdown and reboot
 super + z;{s, shift + r}
-    systemctl {shutdown,reboot}
+    {shutdown now,reboot}
 
 # Lock screen
 super + z;l
