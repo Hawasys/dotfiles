@@ -10,8 +10,13 @@ setopt INC_APPEND_HISTORY
 HISTSIZE=10000000
 SAVEHIST=10000000
 HISTFILE=$HOME/.cache/zsh/history
-bindkey "^[[A" history-beginning-search-backward
-bindkey "^[[B" history-beginning-search-forward
+autoload -U up-line-or-beginning-search
+autoload -U down-line-or-beginning-search
+zle -N up-line-or-beginning-search
+zle -N down-line-or-beginning-search
+bindkey "^[[A" up-line-or-beginning-search
+bindkey "^[[B" down-line-or-beginning-search
+
 
 #autocomplete#
 autoload -U compinit

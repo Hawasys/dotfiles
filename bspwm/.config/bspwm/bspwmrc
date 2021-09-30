@@ -7,7 +7,7 @@
 # export BROWSER=vivaldi-stable
 
 pgrep -x sxhkd > /dev/null || sxhkd &
-pgrep bspswallow > /dev/null || $HOME/.config/bspwm/bspswallow &
+pgrep bspswallow > /dev/null || bspswallow &
 
 # ##############################################################################
 # #                                  FUNCTIONS                                 # 
