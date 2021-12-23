@@ -25,19 +25,19 @@ config() { bspc config "$@" & }
 xrdb $HOME/.Xresources &
 killall "dusnt"
 dunst &
-$HOME/.local/scripts/eww daemon &
+#$HOME/.local/scripts/eww daemon &
 mpd &
-# $HOME/.local/bin/mpd-discord-rpc &
 picom &
 
 # Start polkit agent
 /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
 
 # Set wallpaper
-hsetroot -fill "$HOME/.wallpaper.png"
+hsetroot -fill "$HOME/wallpaper/wallpaper.bebo"
 
 # Start polybar
 sh $HOME/.config/polybar/launch.sh
+pgrep -x conky > /dev/null || conky &
 setxkbmap br abnt2
 
 # ##############################################################################
@@ -45,10 +45,11 @@ setxkbmap br abnt2
 # ##############################################################################
 
 # ##############################################################################
+
 # #                            GENERAL CONFIGURATION                           #
 # ##############################################################################
 
-bspc monitor -d I II III IV 
+bspc monitor -d I II III IV V
 
 bspc config pointer_modifier             Mod4
 bspc config pointer_action1              move

@@ -1,7 +1,7 @@
 alias grubupdate="sudo grub-mkconfig -o /boot/grub/grub.cfg"
 
 alias theharvester="python3 /opt/theHarvester/theHarvester.py"
-
+alias bctl="bluetoothctl"
 alias sherlock="/opt/sherlock/sherlock/sherlock.py"
 alias john="/opt/JohnTheRipper/run/john"
 
@@ -14,6 +14,7 @@ alias l='exa -al --color=always'
 
 alias downyt_a='youtube-dl -f best --add-metadata' 
 alias downyt='youtube-dl -f best'
+alias downmc='youtube-dl --continue --ignore-errors --no-overwrites --extract-audio -f bestaudio --download-archive downloaded.txt --cookies youtube_cookies.txt --add-metadata -o "%(title)s.%(ext)s"'
 
 alias -g ...='../..'
 alias -g ....='../../..'

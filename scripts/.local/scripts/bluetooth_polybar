@@ -1,10 +1,10 @@
 #!/bin/sh
  
-[ $(bluetoothctl show | grep 'Powered: yes' | wc -l) -gt 0 ] && bluetoothctl paired-devices | \
+[ $(timeout 5 bluetoothctl show | grep 'Powered: yes' | wc -l) -gt 0 ] && bluetoothctl paired-devices | \
     cut -d' ' -f2 | \
     xargs -i -n1 bash -c "bluetoothctl info {} | grep -q 'Connected: yes' && bluetoothctl info {} | grep -o 'Alias: .*'" | \
     awk -vORS=', ' '{sub($1 OFS,"")}1' | \
     sed -e 's/, $//' | \
-    xargs -r -I {} echo "%{F#A9B665} ({})" || echo "%{F#EA6962}"
+    xargs -I {} echo "%{F#A9B665} ({})" || echo "%{F#EA6962}";
 
 

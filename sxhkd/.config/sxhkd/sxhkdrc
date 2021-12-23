@@ -41,11 +41,11 @@ super + ctrl + {h,j,k,l}
 super + ctrl + space
 	bspc node -p cancel
 
-
 # Start alacritty
 super + Return
-    alacritty 
-
+    alacritty
+super + t
+    alacritty
 # Open Firefox
 super + b
     firefox
@@ -60,10 +60,10 @@ super + p
 
 # Screenshot
 Print
-    scrot -e 'mv $f ~/Images/screenshots/'
+    scrot -e 'mv $f ~/Images/screenshots/'; notify-send "screenshot saved at $HOME/Images/screenshots"
 
 super + Print
-    scrot -s -e 'mv $f ~/Images/screenshots/'
+    scrot -s -e 'mv $f ~/Images/screenshots/'; notify-send "screenshot saved at $HOME/Images/screenshots"
 
 # Manage volume
 XF86Audio{Raise,Lower}Volume
@@ -73,15 +73,15 @@ XF86Audio{Next,Prev,Play,Stop}
     pulseaudio-ctl {next,prev,play,stop}
 
 XF86AudioMute
-    pulseaudio-ctl mute
+    pulseaudio-ctl mute; notify-send "muted"
 
 # Manage brightness
 XF86MonBrightness{Up,Down}
-    xbacklight -{inc,dec} 10
+    xbacklight -{inc 10; notify-send "brightness up",dec 10; notify-send "brightness down"}
 
 # Quit and restart bspwm
 super + z;{e, r}
-   bspc {quit,wm -r}
+   bspc {quit,wm -r; notify-send "restart bspwm"}
 
 # Shutdown and reboot
 super + z;{s, shift + r}
