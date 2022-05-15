@@ -1,5 +1,5 @@
 alias grubupdate="sudo grub-mkconfig -o /boot/grub/grub.cfg"
-
+alias setupgentoo='doas sh -c "cryptsetup luksOpen /dev/nvme0n1p5 gentoo && mount /dev/mapper/gentoo -o subvol=@ /mnt/gentoo && mount /dev/nvme0n1p4 /mnt/gentoo/boot && mount --types proc /proc /mnt/gentoo/proc && mount --rbind /sys /mnt/gentoo/sys && mount --make-rslave /mnt/gentoo/sys && mount --rbind /dev /mnt/gentoo/dev && mount --make-rslave /mnt/gentoo/dev && mount --bind /run /mnt/gentoo/run && mount --make-slave /mnt/gentoo/run"'
 alias theharvester="python3 /opt/theHarvester/theHarvester.py"
 alias bctl="bluetoothctl"
 alias sherlock="/opt/sherlock/sherlock/sherlock.py"
@@ -12,9 +12,8 @@ alias ls='exa --color=always'
 alias lt='exa -aT --color=always'
 alias l='exa -al --color=always'
 
-alias downyt_a='youtube-dl -f best --add-metadata' 
-alias downyt='youtube-dl -f best'
-alias downmc='youtube-dl --continue --ignore-errors --no-overwrites --extract-audio -f bestaudio --download-archive downloaded.txt --cookies youtube_cookies.txt --add-metadata -o "%(title)s.%(ext)s"'
+alias downyt='yt-dlp --add-metadata -N 3 -o "%(title)s.%(ext)s"'
+alias downmc='yt-dlp --continue --ignore-errors --no-overwrites --extract-audio -f bestaudio --download-archive downloaded.txt --cookies youtube_cookies.txt --add-metadata -o "%(title)s.%(ext)s"'
 
 alias -g ...='../..'
 alias -g ....='../../..'

@@ -37,8 +37,17 @@ hsetroot -fill "$HOME/wallpaper/wallpaper.bebo"
 
 # Start polybar
 sh $HOME/.config/polybar/launch.sh
+
+# start conky
 pgrep -x conky > /dev/null || conky &
+
+#set keyboard layout
 setxkbmap br abnt2
+
+#disable sleep
+xset s off
+xset dpms 0 0 0
+xset -dpms s off
 
 # ##############################################################################
 # #                                 WINDOW RULES                               #
