@@ -5,6 +5,6 @@
     xargs -i -n1 bash -c "bluetoothctl info {} | grep -q 'Connected: yes' && bluetoothctl info {} | grep -o 'Alias: .*'" | \
     awk -vORS=', ' '{sub($1 OFS,"")}1' | \
     sed -e 's/, $//' | \
-    xargs -I {} echo "%{F#A9B665} ({})" || echo "%{F#EA6962}";
+    xargs -I {} echo "%{F#A9B665}({})" || echo "%{F#EA6962}";
 
 
