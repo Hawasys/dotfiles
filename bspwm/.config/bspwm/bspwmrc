@@ -28,6 +28,7 @@ dunst &
 #$HOME/.local/scripts/eww daemon &
 mpd &
 picom &
+wmname LG3D
 
 # Start polkit agent
 /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
@@ -80,6 +81,8 @@ bspc config single_monocle               true
 outer   =  '0x1d2021'   # outer
 inner1  =  '0x32302f'  # focused
 inner2  =  '0x282828'  # normal
+
+bspc rule -a Zathura state=tiled
 
 targets() {
  	case $1 in

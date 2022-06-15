@@ -1,5 +1,4 @@
 alias grubupdate="sudo grub-mkconfig -o /boot/grub/grub.cfg"
-alias setupgentoo='doas sh -c "cryptsetup luksOpen /dev/nvme0n1p5 gentoo && mount /dev/mapper/gentoo -o subvol=@ /mnt/gentoo && mount /dev/nvme0n1p4 /mnt/gentoo/boot && mount --types proc /proc /mnt/gentoo/proc && mount --rbind /sys /mnt/gentoo/sys && mount --make-rslave /mnt/gentoo/sys && mount --rbind /dev /mnt/gentoo/dev && mount --make-rslave /mnt/gentoo/dev && mount --bind /run /mnt/gentoo/run && mount --make-slave /mnt/gentoo/run"'
 alias theharvester="python3 /opt/theHarvester/theHarvester.py"
 alias bctl="bluetoothctl"
 alias sherlock="/opt/sherlock/sherlock/sherlock.py"
