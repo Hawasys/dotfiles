@@ -6,9 +6,9 @@ super + alt + {n, m}
 alt + f
     sh $HOME/.local/scripts/tglbar
 
-# Move the focused window
+# Move the focused window (floating)
 super + {Left,Down,Up,Right}
-	bspc node -v {-20 0,0 20,0 -20,20 0}
+	bspc node -v {-20 0,0 +20,0 -20,+20 0}
 
 # Kill the focused window
 super + q
@@ -22,12 +22,12 @@ super + {_,shift + }{1-8}
 super + {h,j,k,l}
 	bspc node -f {west,south,north,east}
 
-# Resize windows
-super + shift + {h,j,k,l}
-	bspc node -z {right -20 0,top 0 20,bottom 0 -20,left 20 0}
-
+#resize windows
 super + alt + {h,j,k,l}
-	bspc node -z {left -20 0,bottom 0 20,top 0 -20,right 20 0}
+    bspc node -z {right -20 0; bspc node -z left +20 0, \
+    top 0 -20; bspc node -z bottom 0 +20, \
+    top 0 +20; bspc node -z bottom 0 -20, \
+    right +20 0; bspc node -z left -20 0}  
 
 # Set window state
 super + {alt + t,shift + t,space,alt+ f}
@@ -35,7 +35,7 @@ super + {alt + t,shift + t,space,alt+ f}
 
 # Set new window orientation
 super + ctrl + {h,j,k,l}
-	bspc node -p {west,south,north,east}
+	bspc node -s {west,south,north,east} --follow
 
 # Cancel the new window orientation
 super + ctrl + space
