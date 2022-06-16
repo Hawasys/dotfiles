@@ -61,4 +61,7 @@ let g:vimtex_view_method = 'zathura'
 set number
 " Enable syntax highlighting
 syntax on
+let &t_ZH="\e[3m"
+let &t_ZR="\e[23m"
+highlight Comment cterm=bold gui=bold
 

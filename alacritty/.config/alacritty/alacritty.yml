@@ -2,6 +2,6 @@ window:
   opacity: 0.6
 font:
     normal:
-        family: RobotoMono Nerd Font
+        family: Scientifica
         style: Regular
-    size: 10
+    size: 12
