@@ -4,6 +4,7 @@ alias bctl="bluetoothctl"
 alias sherlock="/opt/sherlock/sherlock/sherlock.py"
 alias john="/opt/JohnTheRipper/run/john"
 
+
 alias sudo='doas '
 alias doas='doas '
 
@@ -20,7 +21,9 @@ alias -g .....='../../../..'
 alias -g ......='../../../../..'
 
 alias md='mkdir -p'
-
+function copy(){
+    cat $@|xclip -selection clipboard
+}
 function extract {
  if [ -z "$1" ]; then
     # display usage if no parameters given
