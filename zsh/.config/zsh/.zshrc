@@ -52,3 +52,5 @@ source $ZDOTDIR/zsh-completions/zsh-completions.plugin.zsh
 source $ZDOTDIR/zsh-autosuggestions/zsh-autosuggestions.plugin.zsh
 source $ZDOTDIR/zsh-syntax-highlighting/zsh-syntax-highlighting.plugin.zsh
 
+[ -f "/home/hawasys/.ghcup/env" ] && source "/home/hawasys/.ghcup/env" # ghcup-env
+

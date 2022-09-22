@@ -1,7 +1,8 @@
 window:
   opacity: 0.6
+
 font:
-    normal:
-        family: Scientifica
-        style: Regular
-    size: 12
+  normal:
+    family: "scientifica Nerd Font"
+    style: regular
+  size: 12.0
