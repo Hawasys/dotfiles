@@ -10,10 +10,6 @@ vim.opt.expandtab = false
 vim.opt.list = true
 vim.opt.relativenumber = true
 
---indent blankline
-vim.opt.listchars:append "space:⋅"
-vim.cmd [[highlight IndentBlanklineContextSpaceChar guifg=#ffffff gui=nocombine]]
-
 vim.g.rustfmt_autosave = 1
 
 -- variables --.

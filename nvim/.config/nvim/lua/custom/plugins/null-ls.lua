@@ -22,7 +22,8 @@ null_ls.setup {
     diagnostics.luacheck,
 
     --C++
-    --diagnostics.cppcheck,
+    formatting.astyle,
+    diagnostics.clang_check,
 
     --python
     --sh
