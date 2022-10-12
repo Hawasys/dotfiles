@@ -3,8 +3,8 @@ configuration {
         combi-modi: "window,drun";
         font: "scientifica 18";
         terminal: "alacritty";
-        theme: "colors-rofi-dark";
-
+}
+@theme "colors-rofi-dark"
 /*      width: 50;*/
 /*      lines: 15;*/
 /*      columns: 1;*/
@@ -134,4 +134,3 @@ configuration {
 /*      me-select-entry: "Mouse1";*/
 /*      me-accept-entry: "MouseD1";*/
 /*      me-accept-custom: "Control+MouseD1";*/
-}
