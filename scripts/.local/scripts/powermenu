@@ -10,7 +10,7 @@ selected_option=$(echo "$lock lock
 $logout logout
 $sleep sleep
 $reboot reboot
-$shutdown shutdown"| rofi -dmenu -i -p "Power" -theme "~/.config/rofi/powermenu/column_rounded.rasi")
+$shutdown shutdown"| rofi -dmenu -i -p "Power" -theme "~/.config/rofi/powermenu/column_rounded.rasi"| sed 's/ [a-z]*//g')
 # Do something based on selected option
 if [ "$selected_option" == "$lock" ]
 then
