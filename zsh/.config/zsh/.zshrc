@@ -54,3 +54,8 @@ source $ZDOTDIR/zsh-syntax-highlighting/zsh-syntax-highlighting.plugin.zsh
 
 [ -f "/home/hawasys/.ghcup/env" ] && source "/home/hawasys/.ghcup/env" # ghcup-env
 
+#setup env variables
+path+=("$HOME/.local/bin" "$HOME/appimages") 
+export PATH
+
+source $HOME/.cargo/env
