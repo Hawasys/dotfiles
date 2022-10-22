@@ -52,11 +52,11 @@ super + b
 
 # Open application menu
 super + d
-    sh $HOME/.local/scripts/appmnu
+    sh appmnu
 
 # Toggle eww dashboard
 super + p
-    sh $HOME/.local/scripts/dshbrd
+    sh dshbrd
 
 # Screenshot
 Print
